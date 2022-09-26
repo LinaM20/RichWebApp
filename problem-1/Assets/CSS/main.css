@@ -1,0 +1,32 @@
+.main-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex-grow: 0.25;
+    border: 1px solid black;
+}
+
+.sub-column {
+    border: 1px solid black;
+}
+
+@media (max-width: 720px) {
+    .column {
+      width: calc(50% - 2px)
+    }
+    .sub-column {
+        width: calc(50% - 2px)
+      }
+  }
+  
+  @media (max-width: 360px) {
+    .column {
+      width: calc(100% - 2px)
+    }
+    .sub-column {
+        width: calc(50% - 2px)
+      }
+  }
+

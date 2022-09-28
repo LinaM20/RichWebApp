@@ -1,13 +1,35 @@
+<!DOCTYPE html>
 <html>
+
     <head>
-        <title>Note-taking App </title>
+        <link rel="stylesheet" href="Assets/CSS/style.css"/>
     </head>
 
     <body>
-        <h1>Take Notes!</h1>
+        <div id="wrapper">
+            <div id="note-text">
+                <h2 id="note-editor-title">Take Notes!</h2>
+                <!-- <input type="text" id="title" name="title" placeholder="Title"/> -->
+                <textarea id="message" name="message" placeholder="Notes, notes, notes..."></textarea>
+                <label>Colours</label>
+                <select id="color" name="color">
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
+                </select>
+                <div id="button">
+                    <button id="add-note-button">Add Note</button>
+                </div>
+            </div>
+        
+            <div id="display-notes">
+                <h2>Notes</h2>
+                <ul id="notes"></ul>
+            </div>
+        </div>
+        <script src="script.js"></script>
     </body>
-
-    <footer>
-    </footer>
-
 </html>

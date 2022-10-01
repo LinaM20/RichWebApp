@@ -1,5 +1,6 @@
   body {
-    font-family: 'Courier New', Courier, monospace;
+  
+      font-family: "Lucida Handwriting", "Brush Script MT", cursive;
   }
   
   #wrapper {
@@ -26,6 +27,7 @@
   }
   
   textarea {
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
     width: 250px;
     height: 200px;
     font-size: 16px;
@@ -37,6 +39,7 @@
   select {
     display: block;
     margin-bottom: 20px;
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
     width: 150px;
     padding: 5px;
   }
@@ -49,6 +52,7 @@
     background: rgb(181, 136, 80);
     color: white;
     font-size: 15px;
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
     position: relative;
     display: block;
     width: 150px;
@@ -84,27 +88,27 @@
   }
   
   #notes li.red {
-    background: red;
+    background: #FFABAB;
   }
 
   #notes li.orange {
-    background: orange;
+    background: #F29f44;
   }
 
   #notes li.yellow {
-    background: yellow;
+    background: #FFF5BA;
   }
   
   #notes li.green {
-    background: green;
+    background: #E7FFAC;
   }
   
   #notes li.blue {
-    background: blue;
+    background: #ACE7FF;
   }
 
   #notes li.purple {
-    background: purple;
+    background: #D5AAFF;
   }
   
   footer {
@@ -131,15 +135,8 @@
     cursor: pointer;
   }
   
-  /* .note-title {
-    font-size: 2em;
-    font-weight: bold;
-    display: block;
-    width: 100%;
-  } */
-  
   .note-message {
-    margin-top: 10px;
+    margin-top: 25px;
     display: block;
     width: 100%;
   }

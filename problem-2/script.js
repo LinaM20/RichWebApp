@@ -1,12 +1,10 @@
 (function() {
-	//'use strict';
-
 	var noteApp = {
 	  noteText: document.getElementById('note-text'),
 
 	  message: document.getElementById('message'),
 	  color: document.getElementById('color'),
-	  
+
 	  addButton: document.getElementById('add-note-button'),
 	  deleteButton: document.querySelector('.delete'),
 	  editButton: document.querySelector('.edit'),
@@ -15,19 +13,16 @@
 	  editMode: false,
   
 	  init: function() {
-
 		noteApp.addButton.addEventListener('click', noteApp.createNote);	
-	
 	  },
 
 	  createNote: function() {
-
 		var note = new Object();
 		note.message = noteApp.message.value;
 		note.color = noteApp.color.value;
 		noteApp.addNote(note);
-		
 	  },
+
 	  addNote: function(note) {
 		var item = document.createElement('li'),
 		deleteButton = document.createElement('span'),
@@ -56,14 +51,6 @@
 		noteApp.notes.prepend(item);
   
 		noteApp.message.value = '';
-  
-		// if(!noteApp.editMode) {
-		// 	noteApp.addButton.innerText = 'Add Note';
-		// } else {
-		//   setTimeout(function() {
-		// 	noteApp.addButton.innerText = 'Add Note';
-		//   }, 200);
-		// }
 	  },
 	  editNote: function() {
 		var item;
@@ -131,7 +118,5 @@
 		this.parentNode.remove();
 	  }
 	};
-  
 	noteApp.init();
-  
   })();

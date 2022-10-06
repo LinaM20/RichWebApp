@@ -20,14 +20,22 @@
                     <option value="blue">Blue</option>
                     <option value="purple">Purple</option>
                 </select>
-                <div id="button">
+                <div id="add-button">
                     <button id="add-note-button">Add Note</button>
                 </div>
             </div>
         
             <div id="display-notes">
                 <h2>Notes</h2>
-                <ul id="notes"></ul>
+                <!-- <ul id="note"></ul> -->
+                <div id="notes">
+                    <ul id="note">
+                        <p class="note-counter">Note ${index + 1}</p>
+                        <p id="message"> ${element}</p>
+                        <button id="${index}"onclick="deleteNote(this.id)" class="delete">Delete Note</button>
+                        <button id="${index}"onclick="editNote(this.id)" class="edit">Edit Note</button>
+                    </ul>
+                
             </div>
         </div>
         <script src="script.js"></script>

@@ -6,6 +6,8 @@ let addBtn = document.getElementById("add-note-button");
 addBtn.addEventListener("click", function() {
 
     let message = document.getElementById("message");
+    let colour = document.getElementById("color");
+
     let notes = localStorage.getItem("notes");
 
     if (notes == null) {
@@ -15,7 +17,8 @@ addBtn.addEventListener("click", function() {
     }
 
     let notesMessage = {
-        text: message.value
+        text: message.value,
+        colours: colour.value
     };
   
     notesArray.push(notesMessage);
@@ -30,8 +33,6 @@ addBtn.addEventListener("click", function() {
 function showNotes() {
 
     let notes = localStorage.getItem("notes");
-    let colours = document.getElementById("color");
-    let BackgroundValue = colours.options[colours.selectedIndex].value;
 
     if (notes == null) {
         notesArray = [];
@@ -42,7 +43,7 @@ function showNotes() {
     let html = "";
   
     notesArray.forEach(function(element, index) {
-        html += ` <ul id="note" style="background-color: ${BackgroundValue}">
+        html += ` <ul id="note" style="background-color: ${element.colours}">
 		<p class="note-counter">Note ${index + 1}</p>
 		<p class="message"> ${element.text}</p>
 		<button id="${index}"onclick="deleteNote(this.id)" class="delete">Delete Note</button>
@@ -78,6 +79,7 @@ function editNote(index) {
 
     let notes = localStorage.getItem("notes");
     let message = document.getElementById("message");
+    let colour = document.getElementById("color");
 
     if (notes == null) {
       notesArray = [];
@@ -86,6 +88,7 @@ function editNote(index) {
     }
 
     message.value = notesArray[index].text;
+    colour.value = notesArray[index].colours;
 
     notesArray.splice(index, 1);
     localStorage.setItem("notes", JSON.stringify(notesArray));

@@ -32,7 +32,7 @@ for (let i = 0; i< span.length; i++) {
     span[i].innerText = "CATS";
 }
 
-//changing the link tags to other links
+//changing the ul tags to other links
 const ul = document.getElementsByTagName("ul");
 for (let i = 0; i< ul.length; i++) {
     ul[i].innerText = "Unlisted list";

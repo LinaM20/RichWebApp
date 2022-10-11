@@ -10,12 +10,38 @@
         <h1>Phone Directory</h1>
         <div id="AddContactForm">
         <form name="form" onsubmit="return validateForm()">
-            <input type="text" id="name" name="name" placeholder="Contact Name">
-            <input type="text" id="number" name="number" placeholder="Mobile Number">
-            <input type="text" id="email" name="email" placeholder="Email">
-            <input type="submit" id="AddContactButton" value="Add Contact">
+            <input type="text" id="name" name="name" placeholder="Contact Name"  maxlength="20">
+            <input type="text" id="number" name="number" placeholder="Mobile Number"  maxlength="10">
+            <input type="text" id="email" name="email" placeholder="Email"  maxlength="40">
+            <input type="submit" id="add-contact-button" value="Add Contact">
         </form>
         </div>
+        <br> 
+        <br>
+
+        <div id="search-contact">
+            Search contact by Mobile No:
+            <input type="search" id="search" onkeyup="searchContact()">
+        </div>
+
+        <div id="display-contacts">
+            <h1>Contacts Summary</h1>
+            <table id="contacts">
+                <tr id="table-headings">
+                    <th>Name</th>
+                    <th>Phone number</th>
+                    <th>Email</th>
+                </tr>
+                <tr id="contact-details">
+                    <td id="contact-name"></td>
+                    <td id="contact-phone-number"></td>
+                    <td id="contact-email"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="error"></div>
+
         <script src="script.js"></script>
     </body>
 

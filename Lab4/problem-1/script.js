@@ -146,3 +146,32 @@ function searchContact() {
         }
     }
 }
+
+function sortTable() {
+
+    let contactsTable, rows, doSwitch, i, row1, row2, switchRow;
+
+    contactsTable = document.getElementById("contacts");
+    doSwitch = true;
+    
+    while (doSwitch) {
+        doSwitch = false;
+        rows = contactsTable.rows;
+      
+        for (i = 1; i < (rows.length - 1); i++) {
+            switchRow = false;
+            row1 = rows[i];
+            row2 = rows[i + 1];
+
+            if (row1.innerHTML > row2.innerHTML) {
+                switchRow = true;
+                break;
+            }
+        }
+        if (switchRow) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            doSwitch = true;
+        }
+    }
+
+}

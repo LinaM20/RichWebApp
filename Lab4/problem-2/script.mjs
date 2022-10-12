@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-fetch('https://jsonplaceholder.typicode.com/posts/')
+fetch('https://jsonplaceholder.typicode.com/posts')
 .then((response) => {
   return response.json();
 })
@@ -9,7 +9,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/')
   arrayData.push(data);
   console.log(arrayData);
 
-  let obj = arrayData.find(o => o.title.length > 6);
+  let obj = arrayData.find(o => {
+    return o.title.length > 6;
+  });
   console.log(obj);
 
 })

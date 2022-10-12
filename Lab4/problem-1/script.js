@@ -26,18 +26,14 @@ addContactButton.addEventListener("click", function() {
     if (validateForm() == true) {
         contactsArray.push(contactInfo);
         localStorage.setItem("contacts", JSON.stringify(contactsArray));
+        contacts.value = "";
+        showContacts();
     }
     
-
-    contacts.value = "";
-
-  
-    showContacts();
 });
 
 function showContacts() {
 
-    
     let contacts = localStorage.getItem("contacts");
 
     if (contacts == null) {
@@ -45,30 +41,19 @@ function showContacts() {
       } else {
         contactsArray = JSON.parse(contacts);
     }
-  
-    let html = "";
-  
-    contactsArray.forEach(function(element, index) {
-        html += `
-        <table id="contacts">
-            <tr id="table-headings">
-                <th onclick="sortTable()">Name</th>
-                <th>Mobile</th>
-                <th>Email</th>
-            </tr>
-            <tr>
-                <td id="contact-name">${element.name}</td>
-                <td id="contact-phone-number">${element.number}</td>
-                <td id="contact-email">${element.email}</td>
-                <button id="${index}"onclick="deleteContact(this.id)" class="delete">Delete Note</button>
-            </tr>
-        </table>
-            
-       `;
-    });
-  
-    let contactElement = document.getElementById("contacts");
-    contactElement.innerHTML = html;
+
+    tableContacts = document.getElementById("contacts");
+
+    for(let i = 0; i < contactsArray.length; i++) {
+        let r = tableContacts.insertRow();
+        let rowName = r.insertCell();
+        let rowNumber = r.insertCell();
+        let rowEmail = r.insertCell();
+
+        rowName.innerHTML = contactsArray[i].name;
+        rowNumber.innerHTML = contactsArray[i].number;
+        rowEmail.innerHTML = contactsArray[i].email;
+    }
    
 }
 
@@ -135,14 +120,20 @@ function searchContact() {
     let search = document.getElementById("search");
     let filter = search.value.toUpperCase();
     let contacts = document.getElementById("contacts");
-    li = contacts.getElementsByTagName("td");
+    tableRow = contacts.getElementsByTagName("tr");
     
-    for (let i = 0; i < li.length; i++) {
+    for (let i = 0; i < tableRow.length; i++) {
 
-        if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+        tableData = tableRow[i].getElementsByTagName("td")[1];
+
+        if (tableData) {
+            txtValue = tableData.innerText;
+            
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tableRow[i].style.display = "";
+            } else {
+            tableRow[i].style.display = "none";
+            }
         }
     }
 }

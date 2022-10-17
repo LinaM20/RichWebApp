@@ -35,3 +35,9 @@ tr:nth-child(even) {
     color: red;
 }
 
+#noResult {
+    padding: 10px;
+    text-align: center;
+    color: red;
+}
+

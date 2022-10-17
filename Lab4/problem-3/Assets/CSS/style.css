@@ -1,0 +1,81 @@
+#search-bar {
+    text-align: center;
+}
+
+#search {
+    margin: 20px;
+    padding: 5px;
+    width: 300px;
+}
+
+button {
+    border-radius: 15px;
+    width: 100px;
+    padding: 5px;
+}
+
+#profile {
+    border: 1px solid black;
+    width: 300px;
+    height: 383px;
+}
+
+#user-profile-container {
+    border: 1px solid black;
+    text-align: left;
+    width: 300px;
+}
+
+#image {
+    border: 1px solid black;
+    width: auto;
+    height: 180px;
+}
+
+#profile-name {
+    border: 1px solid black;
+    width: auto;
+    height: 10%;
+}
+
+#profile-username {
+    border: 1px solid black;
+    width: auto;
+    height: 10%;
+}
+
+#profile-email {
+    border: 1px solid black;
+    width: auto;
+    height: 10%;
+}
+
+#profile-location {
+    border: 1px solid black;
+    width: auto;
+    height: 10%;
+}
+
+#profile-number-of-gists {
+    border: 1px solid black;
+    width: auto;
+    height: 10%;
+}
+
+#user-repos-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#user-repos {
+    border: 1px solid black;
+    width: 300px;
+    height: 10%;
+    
+}
+
+#everything {
+    position: relative;
+    border: 1px solid black;
+}

@@ -121,6 +121,7 @@ function searchContact() {
     let filter = search.value.toUpperCase();
     let contacts = document.getElementById("contacts");
     tableRow = contacts.getElementsByTagName("tr");
+    let rowCount = 0;
     
     for (let i = 0; i < tableRow.length; i++) {
 
@@ -131,8 +132,17 @@ function searchContact() {
             
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tableRow[i].style.display = "";
+                
             } else {
-            tableRow[i].style.display = "none";
+                tableRow[i].style.display = "none";
+                rowCount++;     
+
+                if (rowCount == contactsArray.length) {
+                    let errorMessage = `<div id="noResult">No results found</div>`;
+                    let errorDiv = document.getElementById("noResult");
+                    errorDiv.innerHTML = errorMessage;
+                    return true;
+                }  
             }
         }
     }

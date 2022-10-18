@@ -6,42 +6,36 @@
     </head>
 
     <body>
-        <form id="search-bar"> 
-            <input type="search" id="search" name="search" placeholder="Username">
-            <button>Search</button>
-        </form>
-
-    <div id="everything">
-        <div id="user-profile-container">
-            <h4>User Profile</h4>
-            <div id="profile">
-                <div id="image">
-                </div>
-                <div id="profile-name">
-                </div>
-                <div id="profile-username">
-                </div>
-                <div id="profile-email">
-                </div>
-                <div id="profile-location">
-                </div>
-                <div id="profile-number-of-gists">
-                </div>
-            </div>
+        <div id="search-bar">
+            <input id="username-search" type="text" name="login" placeholder="Username">
+            <button id="search-button">Search</button>
         </div>
 
-        <div id="user-repos-container">
-            <h4>User Repos</h4>
-            <div id="user-repos">
-                <div id="user-repo-name">Name</div>
-                <div id="user-repo-description">Description</div>
+        <div id="github-profile">
+            <div id="user-profile">
+                <h4>User Profile</h4>
+                <img id="image" src="">
+                <div id="profile">
+                    <div id="fullname">Name</div>
+                    <div id="username">Username</div>
+                    <div id="email">Email</div>  
+                    <div id="location">Location</div>
+                    <div id="number-of-gists">Number of Gists</div>
+                </div>  
             </div>
+            
+            <div id="user-repos-container">
+                <h4>User Repos</h4>
+                <div id="user-repos">
+                    <div id="repo-name">Name</div>
+                    <div id="repo-description">Description</div>
+                </div>
+            </div>
+            
         </div>
+           
 
-    </div>
-
-
-        <script src="Assets/JavaScript/script.js"></script>
+    <script src="Assets/JavaScript/script.js"></script>
     </body>
 
     <footer></footer>

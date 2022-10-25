@@ -8,19 +8,23 @@ document.getElementById("search-button").addEventListener("click", function(){
 
         .then(function(data) { 
             console.log(data)
-            document.querySelector("#image").src = data.avatar_url;
-            document.querySelector("#username").innerText = data.login;
-            document.querySelector("#fullname").innerText = data.name;
-            document.querySelector("#location").innerText = data.location;
-            document.querySelector("#email").innerText = data.email;
-            document.querySelector("#number-of-gists").innerText = data.public_gists;
+            document.getElementById("image").src = data.avatar_url;
+            document.getElementById("username").innerText = data.login;
+            document.getElementById("fullname").innerText = data.name;
+            document.getElementById("location").innerText = data.location;
+            
+            if (data.email == null) {
+                document.getElementById("email").innerText = "N/A";
+            }
+            else {
+                document.getElementById("email").innerText = data.email;
+            }
+            
+            document.getElementById("number-of-gists").innerText = data.public_gists;
 
-            document.querySelector("#repo-name").innerHTML = data.repos_url; 
-            document.querySelector("#repo-description").innerHTML = data.repos.description;
-      
         }) 
         .catch(function(error) { 
-                document.querySelector("title").innerText = error;
+                document.getElementById("title").innerText = error;
         })
 
         fetch(`https://api.github.com/users/${username.value}/repos`)
@@ -36,14 +40,10 @@ document.getElementById("search-button").addEventListener("click", function(){
                         <div id="user-repos">
                             <div id="repo-name">${data[i].name}</div>
                             <div id="repo-description">${data[i].description}</div>
-                        </div>`
-        
-                         
+                        </div>`  
             }
 
-            
-
-            let repoDiv = document.querySelector("#user-repos-container"); 
+            let repoDiv = document.getElementById("user-repos-container"); 
             repoDiv.innerHTML = html;
            
         })

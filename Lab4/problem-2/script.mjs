@@ -1,18 +1,14 @@
-import fetch from "node-fetch";
-
 fetch('https://jsonplaceholder.typicode.com/posts')
 .then(response => response.json())
-.then(posts => console.log(posts.filter(posts => titleCount(posts.title))))
+.then(posts => {
+  console.log("Titles more than 6")
+  let wordResult = posts.filter(posts => titleCount(posts.title))
+  console.log(wordResult);
 
-console.log(posts.filter(posts => frequency(posts.body)))
+});
 
+//Title count to show the titles that are more than 6
 function titleCount(title) {
   const posts = title.split(' ');
-
-  console.log('RESULT:');
   return posts.filter(word => word !== '').length > 6;
-}
-
-function frequency(body) {
-  
 }

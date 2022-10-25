@@ -8,7 +8,6 @@ addContactButton.addEventListener("click", function() {
     let contactPhoneNumber = document.getElementById("number");
     let contactEmail = document.getElementById("email");
 
-
     let contacts = localStorage.getItem("contacts");
 
     if (contacts == null) {
@@ -45,33 +44,15 @@ function showContacts() {
     tableContacts = document.getElementById("contacts");
 
     for(let i = 0; i < contactsArray.length; i++) {
-        let r = tableContacts.insertRow();
-        let rowName = r.insertCell();
-        let rowNumber = r.insertCell();
-        let rowEmail = r.insertCell();
+        let tableRow = tableContacts.insertRow();
+        let rowName = tableRow.insertCell();
+        let rowNumber = tableRow.insertCell();
+        let rowEmail = tableRow.insertCell();
 
         rowName.innerHTML = contactsArray[i].name;
         rowNumber.innerHTML = contactsArray[i].number;
         rowEmail.innerHTML = contactsArray[i].email;
     }
-   
-}
-
-function deleteContact(index) {
-
-    let contacts = localStorage.getItem("contacts");
-
-    if (contacts == null) {
-        contactsArray = [];
-      } else {
-        contactsArray = JSON.parse(contacts);
-    }
-  
-    contactsArray.splice(index, 1);
-  
-    localStorage.setItem("contacts", JSON.stringify(contactsArray));
-  
-    showContacts();
 }
 
 function validateForm() {
@@ -79,9 +60,9 @@ function validateForm() {
     var email = document.forms.form.email.value;
 	var phone = document.forms.form.number.value;
 
-	var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; 
+	var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
 	var regPhone=/^\d{10}$/;									
-	var regName = /^[A-Za-z\s]*$/;		
+	var regName = /^[A-Za-z\s]{1,20}$/;		
 
 	if (name == null || name == "", email == null || email == "", phone == null || phone == "") {
 
@@ -93,21 +74,21 @@ function validateForm() {
 
     if (!regName.test(name)) {
         //alphabet and space
-        let errorMessage = `<div id="error">ERROR: Name has to be a letter or have a space</div>`;
+        let errorMessage = `<div id="error">ERROR: Name invalid: needs to be alphabetic and 20 characters or less</div>`;
         let errorDiv = document.getElementById("error");
         errorDiv.innerHTML = errorMessage;
 		return false;
 	}
 	if (!regEmail.test(email)) {
 		//proper email
-        let errorMessage = `<div id="error">ERROR: Email should have a valid email address</div>`;
+        let errorMessage = `<div id="error">ERROR: Email invalid: should be 40 characters or less</div>`;
         let errorDiv = document.getElementById("error");
         errorDiv.innerHTML = errorMessage;
 		return false;
 	}	
     if (!regPhone.test(phone)) {
 		//only numbers
-        let errorMessage = `<div id="error">ERROR: Phone number should be valid</div>`;
+        let errorMessage = `<div id="error">ERROR: Phone number invalid: should be 10 digits</div>`;
         let errorDiv = document.getElementById("error");
         errorDiv.innerHTML = errorMessage;
 		return false;
@@ -150,10 +131,19 @@ function searchContact() {
 
 function sortTable() {
 
-    let contactsTable, rows, doSwitch, i, row1, row2, switchRow;
+    let contactsTable;
+    let rows;
+    let doSwitch;
+    let i;
+    let row1;
+    let row2;
+    let switchRow;
+    let switcher;
+    let count= 0;
 
     contactsTable = document.getElementById("contacts");
     doSwitch = true;
+    switcher = "ascending";
     
     while (doSwitch) {
         doSwitch = false;
@@ -164,14 +154,27 @@ function sortTable() {
             row1 = rows[i];
             row2 = rows[i + 1];
 
-            if (row1.innerHTML > row2.innerHTML) {
-                switchRow = true;
-                break;
-            }
+            if (switcher == "ascending") {
+                if (row1.innerHTML > row2.innerHTML) {
+                    switchRow = true;
+                    break;
+                }
+              } else if (switcher == "descending") {
+                if (row1.innerHTML < row2.innerHTML) {
+                    switchRow = true;
+                    break;
+                  }
+              }
         }
         if (switchRow) {
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             doSwitch = true;
+            count++; 
+        } else {
+            if (count == 0 && switcher == "ascending") {
+                switcher = "descending";
+                doSwitch = true;
+            }
         }
     }
 

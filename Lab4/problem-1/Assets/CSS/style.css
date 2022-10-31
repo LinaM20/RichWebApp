@@ -1,0 +1,49 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: bold;
+}
+
+#AddContactForm {
+    border: 2px solid #52b5b5;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #b2dfdb;
+    margin: auto;
+    width: 50%;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th, tr {
+    padding: 8px;
+    vertical-align: center;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#search-contact {
+    text-align: center;
+    padding: 20px;
+}
+
+#error {
+    text-align: center;
+    color: red;
+}
+
+#noResult {
+    padding: 10px;
+    text-align: center;
+    color: red;
+}
+

@@ -25,7 +25,7 @@ button {
 #user-profile {
     text-align: left;
     width: 350px;
-    margin-left: 470px;
+    margin-left: 20px;
     height: 610px;
 }
 
@@ -76,7 +76,7 @@ button {
 #repo-title {
     position: absolute;
     top: 0px;
-    right: 940px;
+    right: 300px;
 }
 
 #user-repos-container {
@@ -87,9 +87,7 @@ button {
     overflow: auto;
     width: 550px;
     height: 540px;
-    margin-right: 470px;
-
-    
+    margin-left: 150px;
 }
 
 #user-repos {

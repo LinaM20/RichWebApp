@@ -1,0 +1,38 @@
+.wrapper {
+    background-color: #d3d3d3;
+    padding: 10px;
+    width: 15%;
+}
+
+.time {
+    display: inline-block;
+}
+
+#hours {
+    background-color: white;
+    padding: 10px;
+    width: 15%
+}
+
+#minutes {
+    background-color: white;
+    padding: 10px;
+    width: 15%
+}
+
+#seconds {
+    background-color: white;
+    padding: 5px;
+    width: 10%
+}
+
+#start-button {
+    padding: 5px;
+    border: none;
+    background: none;
+    background-color: white;
+}
+
+#play-button {
+    margin-right: 5px;
+}

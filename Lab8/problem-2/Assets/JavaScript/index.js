@@ -34,27 +34,26 @@ function startTimer() {
     if(countHours == 0 && countMinutes == 0 && countSeconds == 0) {
         startCount = 0;
         document.getElementById('start-button').removeAttribute('disabled');
-        
         return false;
-      }
-      else {
+    }
+    else {
         countSeconds--;
+
         if(countSeconds < 0) {
           if(countMinutes > 0) {
-            if(countHours > 0) {
                 countSeconds = 59;
                 countMinutes--;
-                countHours--;
+                if(countHours > 0) {
+                    countHours--;
+                }
             }
-            
-          }
-          else {
-            countSeconds = 0;
-            countMinutes = 0;
-            countHours = 0;
-          }
+            else {
+                countSeconds = 0;
+                countMinutes = 0;
+                countHours = 0;
+            }
         }
-      }
+    }
 
 
     document.getElementById('displayHours').innerHTML = countHours;

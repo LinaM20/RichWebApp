@@ -1,5 +1,7 @@
 const { fromEvent } = rxjs;
 
+document.getElementById('display-timer').style.display = 'none';
+
 let button = document.getElementById('start-button');
 
 let hourInput = document.getElementById('hours');
@@ -29,6 +31,8 @@ function startTimer() {
             
         startCount = 1;
         document.getElementById('start-button').setAttribute('disabled', 'disabled');
+        document.getElementById('display-timer').style.display = 'block';
+
     
     }
     if(countHours == 0 && countMinutes == 0 && countSeconds == 0) {

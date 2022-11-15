@@ -10,15 +10,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="time">
-            <input type="text" id="hours" placeholder="h"></input>:<input type="text" id="minutes" placeholder="m"></input>:<input type="text" id="seconds" placeholder="0"></input>
+    <div id="main-timer">
+        <div class="wrapper">
+            <div class="time">
+                <input type="text" id="hours" placeholder="0"></input>:<input type="text" id="minutes" placeholder="0"></input>:<input type="text" id="seconds" placeholder="0"></input>
+            </div>
+            <br>
+            <br>
+            <button id="start-button"><i id="play-button" class="fa fa-play" style="color:grey"></i>START COUNTDOWN</button>
+        </div>   
+        <div>
+            <span id ="displayHours">00</span>:<span id="displayMinutes">00</span>:<span id="displaySeconds">00</span>
         </div>
-        <br>
-        <br>
-        <button id="start-button"><i id="play-button" class="fa fa-play" style="color:grey"></i>START COUNTDOWN</button>
-    </div>   
-    <div id="div1"></div>
+    </div>
     <script src="Assets/JavaScript/index.js"></script>
 </body>
 </html>

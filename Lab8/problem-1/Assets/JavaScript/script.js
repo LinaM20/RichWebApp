@@ -1,14 +1,13 @@
+const { fromEvent } = rxjs;
 showNotes();
-import { fromEvent } from 'rxjs';
 
-//Click listener when user adds a note
-// note optional configuration parameter
-let addBtn = document.getElementById("add-note-button");                                                        // which will be passed to addEventListener
-const clicksInDiv = fromEvent(addBtn, 'click');
+let addBtn = document.getElementById("add-note-button");
 
-//let addBtn = document.getElementById("add-note-button");
+rxjs.fromEvent(addBtn, 'click')
+.subscribe(() => addNoteFunction());
 
-clicksInDiv.addEventListener("click", function() {
+
+function addNoteFunction() {
 
     let message = document.getElementById("message");
     let colour = document.getElementById("color");
@@ -32,7 +31,7 @@ clicksInDiv.addEventListener("click", function() {
     message.value = "";
   
     showNotes();
-});
+}
 
 //Show the notes in the notes section
 function showNotes() {

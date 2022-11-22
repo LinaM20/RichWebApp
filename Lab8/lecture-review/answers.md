@@ -5,3 +5,5 @@ Streams are data that are created and consumed incrementally. Chunks of the reso
 
 #### Assume that you are building an interface to an API in your Rich Web App. Describe in detail how you could use the RxJS library to handle asynchronous network responses to API requests. In your opinion, what are the benefits to using a streams library for networking over, say, promises? And what do you think are the downsides?
 
+
+Streams would be useful in the ability to transmit any set of data with the strict type checking by the complier. They support multiple observers and are able to control th lifetime of the subscription. The disadvantage to using a stream would be that the long list of functions make it difficult for the developer. They have to go about looking up definitions. The semantics would need to be read carefully. 

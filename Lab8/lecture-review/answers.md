@@ -7,3 +7,6 @@ Streams are data that are created and consumed incrementally. Chunks of the reso
 
 Rxjs calls using Observables will be used to do API calls. It uses common HTTP methods like GET, POST, PUT, DELETE and PATCH. The API is called and using the pipe and map operators. 
 Streams would be useful in the ability to transmit any set of data with the strict type checking by the complier. They support multiple observers and are able to control th lifetime of the subscription. The disadvantage to using a stream would be that the long list of functions make it difficult for the developer. They have to go about looking up definitions. The semantics would need to be read carefully. 
+
+#### Consider three asynchronous tasks, A,B & C. What are the consequences of these functions sharing global state? What is a good practice to alleviate any problems associated with this?
+This can pose a problem as modifying the variable on one thread and reading it is a problem and modifying more than one thread is worse. Instead of using global variables, atomic variables can be used. 

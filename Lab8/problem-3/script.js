@@ -104,28 +104,3 @@ function editNote(index) {
     showNotes();
 	
 }
-
-// function addNote(index) {
-//     let message = document.getElementById("message");
-//     let colour = document.getElementById("color");
-
-//     let notes = localStorage.getItem("notes");
-
-//     if (notes == null) {
-//         notesArray = [];
-//       } else {
-//         notesArray = JSON.parse(notes);
-//     }
-
-//     let notesMessage = {
-//         text: message.value,
-//         colours: colour.value
-//     };
-  
-//     notesArray.push(notesMessage);
-//     localStorage.setItem("notes", JSON.stringify(notesArray));
-
-//     message.value = "";
-  
-//     showNotes();
-// }

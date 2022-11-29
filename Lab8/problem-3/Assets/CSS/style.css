@@ -100,6 +100,16 @@
     cursor: pointer;
   }
 
+  .add {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    height: 24px;
+    cursor: pointer;
+    bottom: 5px;
+    left: 10px;
+  }
+
   #note {
     background-color: transparent;
     border: 1px solid black;

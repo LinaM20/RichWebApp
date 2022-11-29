@@ -3,6 +3,7 @@
 
     <head>
         <link rel="stylesheet" href="Assets/CSS/style.css"/>
+        <script src="https://unpkg.com/rxjs@7.5.7/dist/bundles/rxjs.umd.min.js"></script>
     </head>
 
     <body>
@@ -30,8 +31,9 @@
                     <ul id="note" style="background-color: white;">
                         <p class="note-counter">Note ${index + 1}</p>
                         <p id="message"> ${element}</p>
-                        <button id="${index}"onclick="deleteNote(this.id)" class="delete">Delete Note</button>
-                        <button id="${index}"onclick="editNote(this.id)" class="edit">Edit Note</button>
+                        <button id="${index}" onclick="deleteNote(this.id)" class="delete">Delete Note</button>
+                        <button id="${index}" onclick="editNote(this.id)" class="edit">Edit Note</button>
+                        <button id="add-note-button" onclick="addNote(this.id)" class="add">Add Note</button>
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,16 @@
+const { fromEvent } = rxjs;
+
 showNotes();
 
 //Click listener when user adds a note
-let addBtn = document.getElementById("add-note-button");
 
-addBtn.addEventListener("click", function() {
+let addBtn = document.getElementById("add-note-button");
+rxjs.fromEvent(addBtn, 'click')
+    .subscribe(() => addNote()
+);
+//let addBtn = document.getElementById("add-note-button");
+
+function addNote() {
 
     let message = document.getElementById("message");
     let colour = document.getElementById("color");
@@ -27,7 +34,7 @@ addBtn.addEventListener("click", function() {
     message.value = "";
   
     showNotes();
-});
+}
 
 //Show the notes in the notes section
 function showNotes() {
@@ -48,6 +55,7 @@ function showNotes() {
 		<p class="message"> ${element.text}</p>
 		<button id="${index}"onclick="deleteNote(this.id)" class="delete">Delete Note</button>
 		<button id="${index}"onclick="editNote(this.id)" class="edit">Edit Note</button>
+        <button id="${index}"onclick="addNote(this.id)" class="add">Add Note</button>
 	</ul>`;
     });
   
@@ -90,9 +98,34 @@ function editNote(index) {
     message.value = notesArray[index].text;
     colour.value = notesArray[index].colours;
 
-    notesArray.splice(index, 1);
+    notesArray.remove(index, 1);
     localStorage.setItem("notes", JSON.stringify(notesArray));
 
     showNotes();
 	
 }
+
+// function addNote(index) {
+//     let message = document.getElementById("message");
+//     let colour = document.getElementById("color");
+
+//     let notes = localStorage.getItem("notes");
+
+//     if (notes == null) {
+//         notesArray = [];
+//       } else {
+//         notesArray = JSON.parse(notes);
+//     }
+
+//     let notesMessage = {
+//         text: message.value,
+//         colours: colour.value
+//     };
+  
+//     notesArray.push(notesMessage);
+//     localStorage.setItem("notes", JSON.stringify(notesArray));
+
+//     message.value = "";
+  
+//     showNotes();
+// }

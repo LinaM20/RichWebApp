@@ -31,9 +31,17 @@
                     <ul id="note" style="background-color: white;">
                         <p class="note-counter">Note ${index + 1}</p>
                         <p id="message"> ${element}</p>
-                        <button id="${index}" onclick="deleteNote(this.id)" class="delete">Delete Note</button>
-                        <button id="${index}" onclick="editNote(this.id)" class="edit">Edit Note</button>
-                        <button id="add-note-button" onclick="addNote(this.id)" class="add">Add Note</button>
+                        <button id="delete-note-button" class="delete">Delete Note</button>
+                        <button id="edit-note-button" class="edit">Edit Note</button>
+                        <button id="${index}"onclick="addChildNote(this.id)" class="addChild">Add Note</button>
+                    </ul>
+                </div>
+                <div id="child-notes">
+                    <ul id="child-note" style="background-color: white;">
+                        <p class="note-counter">Note ${index + 1}</p>
+                        <p id="message"> ${element}</p>
+                        <button id="delete-note-button" class="delete">Delete Child Note</button>
+                        <button id="edit-note-button" class="edit">Edit Note</button>
                     </ul>
                 </div>
             </div>

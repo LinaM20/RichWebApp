@@ -7,18 +7,20 @@ showChildNotes();
 
 let addBtn = document.getElementById("add-note-button");
 rxjs.fromEvent(addBtn, 'click')
-    .subscribe(() => addNote()
-);
+    .subscribe(() => addNote());
 
 let deleteBtn = document.getElementById("delete-note-button");
 rxjs.fromEvent(deleteBtn, 'click')
-    .subscribe(() => deleteNote(index)
-);
+    .subscribe(() => deleteNote(index));
 
 let editBtn = document.getElementById("edit-note-button");
 rxjs.fromEvent(editBtn, 'click')
-    .subscribe(() => editNote(index)
-);
+    .subscribe(() => editNote(index));
+
+let addChildBtn = document.getElementById("add-child-note-button");
+rxjs.fromEvent(addChildBtn, 'click')
+    .subscribe(() => addChildNote(index));
+
 
 function addNote() {
 
@@ -169,7 +171,7 @@ function showChildNotes() {
 		<p class="note-counter">Child note ${index + 1}</p>
 		<p class="message"> ${element.text}</p>
 		<button id="${index}"onclick="deleteChildNote(this.id)" class="delete">Delete Child Note</button>
-		<button id="${index}"onclick="editNote(this.id)" class="edit">Edit Note</button>
+		<button id="${index}"onclick="editChildNote(this.id)" class="edit">Edit Note</button>
         <button id="${index}"onclick="addChildNote(this.id)" class="add">Add Child Note</button>
 	</ul>`;
     });
@@ -180,20 +182,43 @@ function showChildNotes() {
     console.log(childNotesArray);
 }
 
-// function deleteChildNote(index) {
+function deleteChildNote(index) {
 
-//     let childNotes = localStorage.getItem("child-notes");
+    let childNotes = localStorage.getItem("child-notes");
   
-//     if (notes == null) {
-//         childNotesArray = [];
-//       } else {
-//         childNotesArray = JSON.parse(childNotes);
-//     }
+    if (notes == null) {
+        childNotesArray = [];
+      } else {
+        childNotesArray = JSON.parse(childNotes);
+    }
   
-//     childNotesArray.splice(index, 1);
+    childNotesArray.splice(index, 1);
   
-//     localStorage.setItem("child-notes", JSON.stringify(childNotesArray));
+    localStorage.setItem("child-notes", JSON.stringify(childNotesArray));
   
-//     showNotes();
-//     showChildNotes();
-// }
+    showNotes();
+    showChildNotes();
+}
+
+function editChildNote(index) {
+
+    let childNotes = localStorage.getItem("child-notes");
+    let message = document.getElementById("message");
+    let colour = document.getElementById("color");
+
+    if (notes == null) {
+      childNotesArray = [];
+    } else {
+        childNotesArray = JSON.parse(childNotes);
+    }
+
+    message.value = childNotesArray[index].text;
+    colour.value = childNotesArray[index].colours;
+
+    childNotesArray.splice(index, 1);
+    localStorage.setItem("child-notes", JSON.stringify(childNotesArray));
+
+    showNotes();
+    showChildNotes();
+	
+}

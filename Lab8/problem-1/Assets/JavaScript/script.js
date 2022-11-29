@@ -4,10 +4,19 @@ showNotes();
 let addBtn = document.getElementById("add-note-button");
 
 rxjs.fromEvent(addBtn, 'click')
-.subscribe(() => addNoteFunction());
+.subscribe(() => addNote());
 
+let deleteBtn = document.getElementById("delete-note-button");
+rxjs.fromEvent(deleteBtn, 'click')
+    .subscribe(() => deleteNote(index)
+);
 
-function addNoteFunction() {
+let editBtn = document.getElementById("edit-note-button");
+rxjs.fromEvent(editBtn, 'click')
+    .subscribe(() => editNote(index)
+);
+
+function addNote() {
 
     let message = document.getElementById("message");
     let colour = document.getElementById("color");

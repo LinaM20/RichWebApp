@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="Assets/CSS/style.css"/>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="note-text">
+                <h2 id="note-editor-title">Take Notes!</h2>
+                <textarea id="message" name="message" placeholder="Notes, notes, notes..."></textarea>
+                <label>Colours</label>
+                <select id="color" name="color">
+                    <option value="#FFABAB">Red</option>
+                    <option value="#F29f44">Orange</option>
+                    <option value="#FFF5BA">Yellow</option>
+                    <option value="#E7FFAC">Green</option>
+                    <option value="#ACE7FF">Blue</option>
+                    <option value="#D5AAFF">Purple</option>
+                </select>
+                <div id="add-button">
+                    <button id="add-note-button">Add Note</button>
+                </div>
+            </div>
+        
+            <div id="display-notes">
+                <h2>Notes</h2>
+                <div id="notes">
+                    <ul id="note" style="background-color: white;">
+                        <p class="note-counter">Note ${index + 1}</p>
+                        <p id="message"> ${element}</p>
+                        <button id="${index}" onClick={deleteNote(this.id)} class="delete">Delete Note</button>
+                        <button id="${index}"  onClick={editNote(this.id)} class="edit">Edit Note</button>
+                    </ul>
+                </div>
+            </div>
+        
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="script.js"></script>
+    </body>
+    
+</html>

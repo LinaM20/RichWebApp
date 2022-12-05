@@ -3,6 +3,9 @@
 
     <head>
         <link rel="stylesheet" href="Assets/CSS/style.css"/>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     </head>
 
     <body>
@@ -20,7 +23,7 @@
                     <option value="#D5AAFF">Purple</option>
                 </select>
                 <div id="add-button">
-                    <button id="add-note-button">Add Note</button>
+                    <button onClick={addNote()} id="add-note-button">Add Note</button>
                 </div>
             </div>
         
@@ -30,8 +33,8 @@
                     <ul id="note" style="background-color: white;">
                         <p class="note-counter">Note ${index + 1}</p>
                         <p id="message"> ${element}</p>
-                        <button id="${index}" onClick={deleteNote(this.id)} class="delete">Delete Note</button>
-                        <button id="${index}"  onClick={editNote(this.id)} class="edit">Edit Note</button>
+                        <button id="${index}" class="delete" onClick={this.deleteRow.bind(this.id)}>Delete Note</button>
+                        <button id="${index}" onClick={editNote(this.id)} class="edit">Edit Note</button>
                     </ul>
                 </div>
             </div>

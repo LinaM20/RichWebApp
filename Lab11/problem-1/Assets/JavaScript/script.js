@@ -1,14 +1,10 @@
 showNotes();
 
-
-// const domContainer = document.getElementById('add-note-button');
-// const root = ReactDOM.createRoot(domContainer);
-// root.render(e(LikeButton));
-
 //Click listener when user adds a note
 let addBtn = document.getElementById("add-note-button");
 
-addBtn.addEventListener("click", function() {
+
+function addNote() {
 
     let message = document.getElementById("message");
     let colour = document.getElementById("color");
@@ -32,7 +28,7 @@ addBtn.addEventListener("click", function() {
     message.value = "";
   
     showNotes();
-});
+}
 
 //Show the notes in the notes section
 function showNotes() {

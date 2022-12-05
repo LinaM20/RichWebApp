@@ -69,7 +69,7 @@ h2 {
 }
 ```
 
-### Detail how the browser loads and bootstraps a rich web application from an initial URL
+### 5. Detail how the browser loads and bootstraps a rich web application from an initial URL
 A user will navigate to a URL in the browser. This browser will go to the DNS (Domain Name Service). This is like an address book which will tell where the website is. 
 The browser will make a TCP/IP connection to the server's IP address and the port that is associated with this. These will load the website. 
 The application server/HTTP proxy is listening to the IP address and will accept the connection. Browser will now send a HTTP request to the open TCP/IP connection.

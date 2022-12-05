@@ -47,24 +47,22 @@ A functor is a data object that can hold elements of any data type and it implem
 ### 4. With the aid of a diagram and example code, describe the Cascading Style Sheets (CSS) Box Model and show how it can be used to space DOM elements
 The diagram can be found [here](https://levelup.gitconnected.com/css-box-model-explained-60fc76fe9c4d)
 ![CSS Box Model](https://miro.medium.com/max/1400/1*E_YuB8x1B3T3h6PIJ_I9qQ.png)
-The different elements of the box model do different things for the styling.
+The CSS Box Model basically is box that wraps around HTML elements. The different elements of the box model do different things for the styling. 
 The interior of the object includes the space occupied by the width and height of the object. 
-The padding refers to the spacing between the object content and edges of the object. 
-The border is the exterior of the object and has its own width. If a border width is greater than zero it grows the size of the object by the amount. 
-Finally, the margin, relates to the exterior spacing between the object and the objec beside. 
-An example of padding would be the following. This will add around 10px of padding space around the image tags. 
+
+The *padding* refers to the spacing between the object content and edges of the object. An example of padding would be the following. This will add around 10px of padding space around the image tags. 
 ```
 img {
     padding: 10px;
 }
 ```
-An example of the border being used is this example where there will be a border around the div tag. The border, size, decoration and colour can be specified. This border will be black, solid and 1px in size. 
+The *border* is the exterior of the object and has its own width. If a border width is greater than zero it grows the size of the object by the amount. An example of the border being used is this example where there will be a border around the div tag. The border, size, decoration and colour can be specified. This border will be black, solid and 1px in size. 
 ```
 div {
     border: 1px solid black
 }
 ```
-An example of margin is below, where margin adds 10px of spacing between the object, which is h2 header tag, and neighboring objects. 
+Finally, the *margin*, relates to the exterior spacing between the object and the objec beside. An example of margin is below, where margin adds 10px of spacing between the object, which is h2 header tag, and neighboring objects. 
 ```
 h2 {
     margin: 10px;

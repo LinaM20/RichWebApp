@@ -23,22 +23,30 @@ A state is a built in React object that is used to contain data or information a
 State is part of the code above. the title for state can be changed.
 
 ### 2. In functional programming, what does the term functor mean? Can you give an example in JavaScript
-A functor is a data object that can hold elements of any data type and it implements the map operation, which is a function. The map() function takes an argument which is another function and calls the function for each element of the functor. This results in a new functor. An example of a functor would be a JavaScript array. 
+A functor is a data object that can hold elements of any data type and it implements the map operation. This map operation is a function. The map() function takes an argument which is another function and calls the function for each element of the functor. This results in a new functor. It essentially unwraps value from context and applies a function. After the function is done it rewraps value in context. An example of a functor would be a JavaScript array. 
+```
 ['232', '435', '753']
 .map(s => parseInt(s))
 .map(n => n / 10)
+```
 
 ### 3. We have looked at three kinds of asynchronous programming mechanisms, namely callbacks, promises and streams. Mention one advantage and one disadvantage of each type.
-An advantage of a callback is that you can wait for the results of a previous function call and then execute another function call. setTimeOut() is a good example of this where the function executes a block of code after a specified time and this time is given in milliseconds. A disadvantage to callbacks is that nested callbacks maybe be used. This would happen if a further asynchronous request needs to be made from the previous one. The second request must be made with the first request's callback logic. 
+**Callback**
+*Advantage:* You can wait for the results of a previous function call and then execute another function call. 
+```setTimeOut()``` is a good example of this where the function executes a block of code after a specified time and this time is given in milliseconds. 
+*Disadvantage:* Nested callbacks maybe be used and this would happen if a further asynchronous request needs to be made from the previous one. The second request must be made with the first request's callback logic. 
 
-An advantage to promises is that is had better handling of asynchronous operations. The handles that will be called are queued up a promise and then the methods are called. A disadvantage to promises it kills the purpose of asynchronous non-blocking input and output. Only one object is returned, not multiple arguments.
+**Promises**
+*Advantage:* It is had better handling of asynchronous operations. The handles that will be called are queued up a promise and then the methods are called. 
+*Disadvantage:* It kills the purpose of asynchronous non-blocking input and output. Only one object is returned, not multiple arguments.
 
-An advantage to streams is that they increase the performance, even when memory is limited and it allows access to data straight away, rather than having to wait for the whole file to download which was the case before.
-A disadvantage to streams is that the more data is received, the more the memory of the application is consumned or more memory will be required, which will grow linearly or exponentially. 
+**Streams**
+*Advantage:* They increase the performance, even when memory is limited and it allows access to data straight away, rather than having to wait for the whole file to download which was the case before.
+*Disadvantage:* The more data is received, the more the memory of the application is consumned or more memory will be required, which will grow linearly or exponentially. 
 
 ### 4. With the aid of a diagram and example code, describe the Cascading Style Sheets (CSS) Box Model and show how it can be used to space DOM elements
 The diagram can be found [here](https://levelup.gitconnected.com/css-box-model-explained-60fc76fe9c4d)
-![alt text](https://miro.medium.com/max/1400/1*E_YuB8x1B3T3h6PIJ_I9qQ.png)
+![CSS Box Model](https://miro.medium.com/max/1400/1*E_YuB8x1B3T3h6PIJ_I9qQ.png)
 The different elements of the box model do different things for the styling.
 The interior of the object includes the space occupied by the width and height of the object. 
 The padding refers to the spacing between the object content and edges of the object. 

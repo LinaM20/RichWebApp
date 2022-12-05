@@ -1,7 +1,26 @@
 ### 1. Explain using code examples what is meant by props and state in React JS?
-Prop is the data passed into a React component and it works like HTML attributes or JavaScript functions arguments. They are part of pure functions and cannot change components modifying its own props. An example of React prop  is ReactDOM.render(<App subject="Adam"/>, document.getElementById('root'));
+Prop is the data passed into a React component and it works like HTML attributes or JavaScript functions arguments. They are part of pure functions and cannot change components modifying its own props. An example of React prop  is 
+```
+ReactDOM.render(<App subject="Adam"/>, document.getElementById('root'));
+```
 The prop part of it is subject.
+```
+class Book extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {title: "Maze Runner"};
+  }
+  render() {
+    return (
+      <div>
+        <h1>Book</h1>
+      </div>
+    );
+  }
+}
+```
 A state is a built in React object that is used to contain data or information about the component. This state can change over time and when it does it re-renders.
+State is part of the code above. the title for state can be changed.
 
 ### 2. In functional programming, what does the term functor mean? Can you give an example in JavaScript
 A functor is a data object that can hold elements of any data type and it implements the map operation, which is a function. The map() function takes an argument which is another function and calls the function for each element of the functor. This results in a new functor. An example of a functor would be a JavaScript array. 

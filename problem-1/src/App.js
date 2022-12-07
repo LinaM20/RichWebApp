@@ -1,6 +1,6 @@
 import NotesList from "./components/NotesList";
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -10,6 +10,19 @@ const App = () => {
     //   //color: color
     // }
   ]);
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem('note')
+    );
+
+    if (savedNotes) {
+      setNotes(savedNotes);
+    }
+  }, []);
+
+  useEffect(() => { 
+    localStorage.setItem('note', JSON.stringify(notes));
+  }, [notes])
 
   const addNote = (text) => {
     const newNote = {

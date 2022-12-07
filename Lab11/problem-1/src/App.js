@@ -7,7 +7,7 @@ const App = () => {
     // {
     //   id: nanoid(),
     //   text: 'This is my note',
-    //   //color: color
+    //   colour: colour
     // }
   ]);
 

@@ -1,7 +1,7 @@
-const Note = ({id, text, color, handleDeleteNote, handleEditNote }) => {
+const Note = ({id, text, handleDeleteNote, handleEditNote }) => {
     return (
         <div className="notes">
-            <ul className="note" style={{backgroundColor: color}}>
+            <ul className="note">
                 <p className="note-counter">Note {id}</p>
                 <p className="message">{text}</p>
                 <button onClick={() => handleEditNote(id)} className="edit">Edit Note</button>

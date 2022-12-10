@@ -28,7 +28,6 @@ const App = () => {
     const newNote = {
       id: nanoid(),
       text: text,   
-      //color: color,
     };
     
     const newNotes = [...notes, newNote];

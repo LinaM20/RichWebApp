@@ -3,18 +3,18 @@ import React from "react";
 
 const AddNote = ({handleAddNote}) => {
     const [noteText, setNoteText] = useState("");
-    const [color, setNoteColour] = useState("");
+    const [colour, setColour] = useState();
 
     const handleChange = (event) => {
         setNoteText(event.target.value);
     }
     
     const handleSaveClick = () => {
-        handleAddNote(noteText);
+        handleAddNote(noteText, colour);
     }; 
 
     const handleColorChange = (event) => {
-        setNoteColour(event.target.value)
+        setColour(event.target.value)
     };
 
     return (
@@ -22,8 +22,8 @@ const AddNote = ({handleAddNote}) => {
                 <h2 id="note-editor-title">Take Notes!</h2>
                 <textarea onChange={handleChange} value={noteText} className="message" name="message" placeholder="Notes, notes, notes..."></textarea>
                 <label>Colours</label>
-                <select onChange={handleColorChange} value={color}>
-                    <option value="red">Red</option>
+                <select onChange={handleColorChange} value={colour}>
+                    <option value="#C13617">Red</option>
                     <option value="#F29f44">Orange</option>
                     <option value="#FFF5BA">Yellow</option>
                     <option value="#E7FFAC">Green</option>

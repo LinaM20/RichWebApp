@@ -24,12 +24,12 @@ const AddNote = ({handleAddNote}) => {
                 <textarea onChange={handleChange} value={noteText} className="message" name="message" placeholder="Notes, notes, notes..."></textarea>
                 <label>Colours</label>
                 <select onChange={handleColorChange} value={colour}>
-                    <option value="#C13617">Red</option>
-                    <option value="#F29f44">Orange</option>
-                    <option value="#FFF5BA">Yellow</option>
-                    <option value="#E7FFAC">Green</option>
-                    <option value="#ACE7FF">Blue</option>
-                    <option value="#D5AAFF">Purple</option>
+                    <option value="#FFD6C9">Red</option>
+                    <option value="#FFE7D1">Orange</option>
+                    <option value="#FFF8B8">Yellow</option>
+                    <option value="#E0FFCC">Green</option>
+                    <option value="#C3E2E6">Blue</option>
+                    <option value="#D0CCE0">Purple</option>
                 </select>
                 <div id="add-button">
                     <button className="add-note-button" onClick={handleSaveClick}>Add Note</button>

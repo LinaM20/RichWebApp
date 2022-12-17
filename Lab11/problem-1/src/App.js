@@ -35,8 +35,8 @@ const App = () => {
   };
   
 
-  const editNote = (id) => {
-    const newNotes = notes.filter((note) => note.id === id);  
+  const editNote = (id, text, colour) => {
+    const newNotes = notes.filter((note) => note.id !== id);  
     setNotes(newNotes);
   };
 

@@ -11,6 +11,7 @@ const AddNote = ({handleAddNote}) => {
     
     const handleSaveClick = () => {
         handleAddNote(noteText, colour);
+        setNoteText('');
     }; 
 
     const handleColorChange = (event) => {

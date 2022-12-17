@@ -7,7 +7,7 @@ const App = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem('note')
+    const savedNotes = JSON.parse(localStorage.getItem('note') 
     );
 
     if (savedNotes) {
@@ -25,7 +25,6 @@ const App = () => {
       text: text,   
       colour: colour
     };
-    
     const newNotes = [...notes, newNote];
     setNotes(newNotes);    
   };
@@ -37,7 +36,7 @@ const App = () => {
   
 
   const editNote = (id) => {
-    const newNotes = notes.filter((note) => note.id === id);
+    const newNotes = notes.filter((note) => note.id === id);  
     setNotes(newNotes);
   };
 
